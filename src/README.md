@@ -32,3 +32,13 @@ OR
 I have implemented support for ipv6 but can not test it as my ISP does not seem to support ipv6 at the moment according to https://test-ipv6.com/.  Even the ping command is not working with ipv6 addresses on my machine.  My program currently reports `sendto: network is unreachable` for these addresses so I would love if whoever takes a look at this can test out my ipv6 support!
 
 I also implemented the -c flag from the ping man page if you would like the program to terminate after a certain # of pings.
+
+# Screenshots
+![Hostname Resolution](/../screenshots/HostnameResolution.png?raw=true)
+
+![Packet Loss Example](/../screenshots/PacketLossExample.png?raw=true)
+
+![Pinging My Public IP](/../screenshots/PingingMyself.png?raw=true)
+
+![-c usage](/../screenshots/UsageWith-c.png?raw=true)
+
