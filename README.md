@@ -1,3 +1,5 @@
+# \*\*\*See README in /src for application README and instructions\*\*\*
+
 # Cloudflare Internship Application: Systems
 
 ## What is it?
