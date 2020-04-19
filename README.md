@@ -1,4 +1,4 @@
-# \*\*\*See README in /src for application README and instructions\*\*\*
+# \*\*\*See README in /src [here](https://github.com/MuchToKnow/internship-application-systems/blob/master/src/README.md) for application README and instructions\*\*\*
 
 # Cloudflare Internship Application: Systems
 
