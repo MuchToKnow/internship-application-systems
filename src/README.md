@@ -9,13 +9,23 @@ Ensure you have installed:
 - "golang.org/x/net/icmp"
 -	"golang.org/x/net/ipv4"
 - "golang.org/x/net/ipv6"
+
+And `go` itself of course!
+
 In the src directory:
+
 `go build main.go`
+
 `sudo ./main google.com`
+
 and you should be pinging google with RTT, Average latency and more being reported.
 
-General usage: 
+General usage:
+
 `sudo ./main <domain or ip>`
+
+OR
+
 `sudo ./main <domain or ip> -c <# of pings>`
 
 # Extra features
