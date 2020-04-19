@@ -4,7 +4,7 @@ Hi there!  Thanks for taking a look at my project!  I have been wanting to learn
 # Regarding the project
 I was not able to get non-priviledged ICMP packets working on my machine (see: https://godoc.org/golang.org/x/net/icmp#PacketConn) so I had to do the project assuming priveledged mode (sudo).
 
-# Running the project
+# Running the project (Linux)
 Ensure you have installed:
 - "golang.org/x/net/icmp"
 -	"golang.org/x/net/ipv4"
