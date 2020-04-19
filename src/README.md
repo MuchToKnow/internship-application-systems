@@ -34,11 +34,11 @@ I have implemented support for ipv6 but can not test it as my ISP does not seem 
 I also implemented the -c flag from the ping man page if you would like the program to terminate after a certain # of pings.
 
 # Screenshots
-![Hostname Resolution](/../screenshots/HostnameResolution.png?raw=true)
+![Hostname Resolution](/screenshots/HostnameResolution.png?raw=true "Hostname Resolution")
 
-![Packet Loss Example](/../screenshots/PacketLossExample.png?raw=true)
+![Packet Loss Example](/screenshots/PacketLossExample.png?raw=true "Example with some loss")
 
-![Pinging My Public IP](/../screenshots/PingingMyself.png?raw=true)
+![Pinging My Public IP](/screenshots/PingingMyself.png?raw=true "Pinging a raw ipv4 (my public ip)")
 
-![-c usage](/../screenshots/UsageWith-c.png?raw=true)
+![-c usage](/screenshots/UsageWith-c.png?raw=true "Example of -c usage")
 
