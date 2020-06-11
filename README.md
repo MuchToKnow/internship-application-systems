@@ -1,47 +1,48 @@
-# \*\*\*See README in /src [here](https://github.com/MuchToKnow/internship-application-systems/blob/master/src/README.md) for application README and instructions\*\*\*
+# Preface
+Hi there!  Thanks for taking a look at my project!  I have been wanting to learn go and I decided this was a great opportunity and project to jump into it with.  Given this, please excuse any antipatterns or code smells I might have let slip by.
 
-# Cloudflare Internship Application: Systems
+# Regarding the project
+I was not able to get non-priviledged ICMP packets working on my machine (see: https://godoc.org/golang.org/x/net/icmp#PacketConn) so I had to do the project assuming priveledged mode (sudo).
 
-## What is it?
+# Running the project (Linux)
+Ensure you have installed:
+- "golang.org/x/net/icmp"
+-	"golang.org/x/net/ipv4"
+- "golang.org/x/net/ipv6"
 
-Please write a small Ping CLI application for MacOS or Linux.
-The CLI app should accept a hostname or an IP address as its argument, then send ICMP "echo requests" in a loop to the target while receiving "echo reply" messages.
-It should report loss and RTT times for each sent message.
+And `go` itself of course!
 
-Please choose from among these languages: C/C++/Go/Rust
+In the src directory:
 
-## Useful Links
+`go build main.go`
 
-- [A Tour of Go](https://tour.golang.org/welcome/1)
-- [The Rust Programming Language](https://doc.rust-lang.org/book/index.html)
+`sudo ./main google.com`
 
-## Requirements
+and you should be pinging google with RTT, Average latency and more being reported.
 
-### 1. Use one of the specified languages
+General usage:
 
-Please choose from among C/C++/Go/Rust. If you aren't familiar with these languages, you're not alone! Many engineers join Cloudflare without
-specific langauge experience. Please consult [A Tour of Go](https://tour.golang.org/welcome/1) or [The Rust Programming Language](https://doc.rust-lang.org/book/index.html).
+`sudo ./main <domain or ip>`
 
-### 2. Build a tool with a CLI interface
+OR
 
-The tool should accept as a positional terminal argument a hostname or IP address.
+`sudo ./main <domain or ip> -c <# of pings>`
 
-### 3. Send ICMP "echo requests" in an infinite loop
+# Extra features
+I have implemented support for ipv6 but can not test it as my ISP does not seem to support ipv6 at the moment according to https://test-ipv6.com/.  Even the ping command is not working with ipv6 addresses on my machine.  My program currently reports `sendto: network is unreachable` for these addresses so I would love if whoever takes a look at this can test out my ipv6 support!
 
-As long as the program is running it should continue to emit requests with a periodic delay.
+I also implemented the -c flag from the ping man page if you would like the program to terminate after a certain # of pings.
 
-### 4. Report loss and RTT times for each message
+# Screenshots
+### Hostname Resolution
+![Hostname Resolution](/screenshots/HostnameResolution.png?raw=true "Hostname Resolution")
 
-Packet loss and latency should be reported as each message received.
+### Example with some Loss
+![Packet Loss Example](/screenshots/PacketLossExample.png?raw=true "Example with some loss")
 
-## Submitting your project
+### Pinging a raw ipv4 address (my own public ip)
+![Pinging My Public IP](/screenshots/PingingMyself.png?raw=true "Pinging a raw ipv4 (my public ip)")
 
-When submitting your project, you should prepare your code for upload to Greenhouse. The preferred method for doing this is to create a "ZIP archive" of your project folder: for more instructions on how to do this on Windows and Mac, see [this guide](https://www.sweetwater.com/sweetcare/articles/how-to-zip-and-unzip-files/).
+### Example with -c usage
+![-c usage](/screenshots/UsageWith-c.png?raw=true "Example of -c usage")
 
-Please provide the source code only, a compiled binary is not necessary.
-
-## Extra Credit
-
-1. Add support for both IPv4 and IPv6
-2. Allow to set TTL as an argument and report the corresponding "time exceeded” ICMP messages
-3. Any additional features listed in the ping man page or which you think would be valuable
